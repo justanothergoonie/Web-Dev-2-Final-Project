@@ -1,0 +1,1853 @@
+@import "reset";
+
+// font-family: 'Poppins', ;
+// font-family: 'Indie Flower', ;
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f5f5f7;
+  width: 100%;
+}
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0px;
+  @media screen and (min-width: 768px) {
+    justify-content: space-evenly;
+    margin: 10px 0px;
+  }
+  @media screen and (min-width: 1220px) {
+    justify-content: space-around;
+  }
+  h1 {
+    align-self: center;
+    font-size: 1.2em;
+    @media screen and (min-width: 768px) {
+      font-size: 1.5em;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 2em;
+      font-family: "Poppins";
+    }
+  }
+  .hide.toggle {
+    display: block;
+    position: relative;
+    background-size: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/hamburger.png);
+    border: 1px solid gray;
+    height: 54px;
+    width: 13%;
+    align-self: center;
+    @media screen and (min-width: 768px) {
+      width: 9%;
+      height: 67px;
+      margin-left: 27%;
+    }
+    @media screen and (min-width: 1220px) {
+      display: none;
+    }
+  }
+  .hide-small {
+    position: absolute;
+    top: 155%;
+    max-height: 0px;
+    min-height: 0%;
+    transition: all 3s ease;
+    background-color: #ececec;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    @media screen and (min-width: 1220px) {
+      display: block;
+      position: relative;
+      width: 40%;
+      max-height: 100%;
+      top: 0%;
+      align-self: center;
+      min-height: 100%;
+      background-color: #f5f5f7;
+    }
+    ul {
+      display: flex;
+      align-self: center;
+      width: 100%;
+      height: 100%;
+      li {
+        display: flex;
+        justify-content: space-evenly;
+        align-self: center;
+        margin: 0 auto;
+        a {
+          text-decoration: none;
+          color: black;
+          font-family: "Poppins";
+          font-size: 1.2em;
+          padding: 35% 10%;
+          @media screen and (min-width: 768px) {
+            font-size: 1.4em;
+            padding: 28% 7%;
+          }
+          @media screen and (min-width: 1220px) {
+          }
+        }
+      }
+    }
+    &.showing {
+      max-height: 1000px;
+      min-height: 10%;
+      top: 135%;
+      transition: all 3s ease;
+      display: block;
+      @media screen and (min-width: 768px) {
+        top: 114%;
+      }
+    }
+  }
+  .cris {
+    display: flex;
+    justify-content: space-around;
+    @media screen and (min-width: 1220px) {
+      justify-content: space-evenly;
+    }
+    .magglass {
+      align-self: center;
+      padding-right: 20%;
+      .search {
+        display: block;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/icon-magnifying-glass.svg);
+        padding-left: 20px;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        @media screen and (min-width: 768px) {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+    .randomline {
+      display: block;
+      align-self: center;
+      position: relative;
+      height: 48px;
+      width: 2px;
+      background-color: gray;
+      @media screen and (min-width: 768px) {
+        height: 74px;
+      }
+    }
+    .kart {
+      padding-left: 10%;
+      align-self: center;
+      .cart {
+        display: block;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(../img/icon-shopping-cart.svg);
+        align-self: center;
+        height: 30px;
+        width: 30px;
+        @media screen and (min-width: 768px) {
+          width: 36px;
+          height: 36px;
+        }
+      }
+    }
+    .things {
+      color: black;
+      text-decoration: none;
+      padding-left: 10%;
+      align-self: center;
+      .items {
+        display: flex;
+        position: relative;
+        color: black;
+        border: solid black 2px;
+        border-radius: 20px;
+        align-self: center;
+        height: 30px;
+        width: 30px;
+        @media screen and (min-width: 768px) {
+          width: 40px;
+          height: 40px;
+          margin-left: 20%;
+        }
+        span {
+          align-self: center;
+          margin-left: 8.5px;
+          font-weight: bold;
+          font-family: "Poppins";
+          @media screen and (min-width: 768px) {
+            margin-left: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.4654236694677871) 0%,
+      rgba(0, 0, 0, 0.6474964985994398) 0%
+    ),
+    url(../img/banner.jpg);
+  background-position: 50% 40%;
+  background-size: 160%;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  padding: 200px 0px;
+  @media screen and (min-width: 768px) {
+    background-position: 50% 70%;
+    background-size: 100%;
+    padding: 220px 0px;
+  }
+  @media screen and (min-width: 1220px) {
+    background-size: 100%;
+    background-position: 50% 75%;
+    padding: 22% 5%;
+  }
+  h2 {
+    font-size: 1.8em;
+    padding-bottom: 50px;
+    font-family: "Poppins";
+    @media screen and (min-width: 768px) {
+      font-size: 2.2em;
+      padding-bottom: 40px;
+    }
+    @media screen and (min-width: 1220px) {
+      padding-bottom: 5%;
+      font-size: 3.2em;
+    }
+  }
+  .randomline2 {
+    width: 15%;
+    height: 2px;
+    background-color: white;
+    align-self: center;
+    @media screen and (min-width: 768px) {
+      width: 10%;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 5%;
+    }
+  }
+  p {
+    font-size: 1.4em;
+    padding-top: 50px;
+    font-family: "Poppins";
+    @media screen and (min-width: 768px) {
+      font-size: 1.7em;
+      padding-top: 40px;
+    }
+    @media screen and (min-width: 1220px) {
+      padding-top: 5%;
+      font-size: 2.2em;
+    }
+  }
+  a {
+    font-size: 1.2em;
+    padding-top: 50px;
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins";
+    @media screen and (min-width: 768px) {
+      font-size: 1.6em;
+    }
+    @media screen and (min-width: 1220px) {
+      padding-top: 5%;
+      font-size: 1.2em;
+    }
+  }
+}
+.features {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 50px auto;
+  width: 90%;
+  font-family: "Poppins";
+  @media screen and (min-width: 1220px) {
+    flex-direction: row;
+    height: 170px;
+    margin: 100px auto;
+    width: 80%;
+  }
+  .shipping {
+    display: flex;
+    align-self: center;
+    width: 80%;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      height: 70%;
+      border-bottom: none;
+      border-right: 1px solid black;
+      padding-bottom: 0%;
+    }
+    img {
+      width: 20%;
+      height: 90px;
+      margin: 17px 0px 0% 10px;
+      @media screen and (min-width: 768px) {
+        margin: 20px 0px 0px 90px;
+        height: 115px;
+      }
+      @media screen and (min-width: 1220px) {
+        margin: 0px 20px;
+        height: unset;
+        width: 25%;
+      }
+    }
+    .column {
+      align-self: center;
+      margin-left: 30px;
+      @media screen and (min-width: 1220px) {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0%;
+      }
+      h2 {
+        line-height: 65px;
+        font-size: 1.5em;
+        font-family: "Poppins";
+        @media screen and (min-width: 1220px) {
+          padding-bottom: 13%;
+          line-height: 5px;
+          font-size: 1.2em;
+        }
+      }
+      span {
+        // line-height:10px;
+        color: #cdcdcd;
+        font-size: 1.2em;
+        @media screen and (min-width: 1220px) {
+          font-size: 1.1em;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+  .online {
+    display: flex;
+    align-self: center;
+    width: 80%;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      height: 70%;
+      border-bottom: none;
+      border-right: 1px solid black;
+      padding-bottom: 0%;
+    }
+    img {
+      width: 20%;
+      height: 65px;
+      margin: 17px 0px 0% 10px;
+      @media screen and (min-width: 768px) {
+        margin: 20px 0px 0px 90px;
+        height: 115px;
+      }
+      @media screen and (min-width: 1220px) {
+        margin: 0px 20px;
+        height: unset;
+        width: 25%;
+      }
+    }
+    .column {
+      margin-left: 30px;
+      align-self: center;
+      @media screen and (min-width: 1220px) {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0%;
+      }
+      h2 {
+        line-height: 65px;
+        font-size: 1.5em;
+        @media screen and (min-width: 1220px) {
+          padding-bottom: 13%;
+          line-height: 25px;
+          font-size: 1.4em;
+        }
+      }
+      span {
+        // line-height:10px;
+        color: #cdcdcd;
+        font-size: 1.2em;
+        @media screen and (min-width: 1220px) {
+          font-size: 1.1em;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+  .piggy {
+    display: flex;
+    align-self: center;
+    width: 80%;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      height: 70%;
+      border-bottom: none;
+      border-right: 1px solid black;
+      padding-bottom: 0%;
+    }
+    img {
+      width: 20%;
+      height: 80px;
+      margin: 17px 0px 0px 10px;
+      @media screen and (min-width: 768px) {
+        margin: 20px 0px 0px 90px;
+        height: 115px;
+      }
+      @media screen and (min-width: 1220px) {
+        margin: 0px 20px;
+        height: unset;
+        width: 25%;
+      }
+    }
+    .column {
+      margin-left: 30px;
+      align-self: center;
+      @media screen and (min-width: 1220px) {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0%;
+      }
+      h2 {
+        line-height: 65px;
+        font-size: 1.5em;
+        @media screen and (min-width: 1220px) {
+          padding-bottom: 13%;
+          line-height: 5px;
+          font-size: 1.2em;
+        }
+      }
+      span {
+        // line-height:10px;
+        color: #cdcdcd;
+        font-size: 1.2em;
+        @media screen and (min-width: 1220px) {
+          font-size: 1.1em;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+  .payment {
+    display: flex;
+    align-self: center;
+    width: 80%;
+    padding-bottom: 15px;
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      height: 70%;
+      padding-bottom: 0%;
+    }
+    img {
+      width: 20%;
+      height: 80px;
+      margin: 17px 0px 0% 10px;
+      @media screen and (min-width: 768px) {
+        margin: 20px 0px 0px 90px;
+        height: 115px;
+      }
+      @media screen and (min-width: 1220px) {
+        margin: 0px 20px;
+        height: unset;
+        width: 25%;
+      }
+    }
+    .column {
+      margin-left: 30px;
+      align-self: center;
+      @media screen and (min-width: 1220px) {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0%;
+      }
+      h2 {
+        line-height: 65px;
+        font-size: 1.5em;
+        @media screen and (min-width: 1220px) {
+          padding-bottom: 13%;
+          line-height: 25px;
+          font-size: 1.4em;
+        }
+      }
+      span {
+        // line-height:10px;
+        color: #cdcdcd;
+        font-size: 1.2em;
+        @media screen and (min-width: 1220px) {
+          font-size: 1.1em;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+  height: 2800px;
+  position: relative;
+  font-family: "Poppins";
+  @media screen and (min-width: 1220px) {
+    height: 1400px;
+    flex-direction: row;
+    width: 80%;
+  }
+  .as-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 47.5%;
+    position: relative;
+    @media screen and (min-width: 1220px) {
+      height: 100%;
+      width: 50%;
+    }
+    .accessories {
+      height: 50%;
+      width: 100%;
+      @media screen and (min-width: 768px) {
+      }
+      @media screen and (min-width: 1220px) {
+        height: 60%;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+      .galleryLinks {
+        display: flex;
+        height: 47.5%;
+        width: 100%;
+        flex-direction: column;
+        text-decoration: none;
+        font-family: "Poppins";
+        color: white;
+        text-align: center;
+        position: absolute;
+        @media screen and (min-width: 1220px) {
+          height: 60%;
+          width: 100%;
+        }
+        img {
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          object-fit: cover;
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          align-self: center;
+          bottom: 80px;
+          @media screen and (min-width: 768px) {
+            bottom: 110px;
+          }
+          h2 {
+            font-size: 2em;
+            padding-bottom: 75px;
+            @media screen and (min-width: 768px) {
+              padding-bottom: 50px;
+            }
+            @media screen and (min-width: 1220px) {
+              font-size: 2em;
+            }
+          }
+          span {
+            @media screen and (min-width: 768px) {
+              font-size: 1.3em;
+            }
+            @media screen and (min-width: 1220px) {
+            }
+          }
+        }
+      }
+    }
+    .sun {
+      height: 50%;
+      width: 100%;
+      @media screen and (min-width: 1220px) {
+        height: 40%;
+        width: 100%;
+      }
+      .galleryLinks {
+        height: 47.5%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        font-family: "Poppins";
+        color: white;
+        text-align: center;
+        position: absolute;
+        @media screen and (min-width: 1220px) {
+          height: 40%;
+        }
+        img {
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: relative;
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          align-self: center;
+          bottom: 80px;
+          @media screen and (min-width: 768px) {
+            bottom: 110px;
+          }
+          h2 {
+            font-size: 2em;
+            padding-bottom: 75px;
+            @media screen and (min-width: 768px) {
+              padding-bottom: 50px;
+            }
+            @media screen and (min-width: 1220px) {
+              font-size: 2em;
+            }
+          }
+          span {
+            @media screen and (min-width: 768px) {
+              font-size: 1.3em;
+            }
+            @media screen and (min-width: 1220px) {
+            }
+          }
+        }
+      }
+    }
+  }
+  .oc-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 47.5%;
+    position: relative;
+    @media screen and (min-width: 1220px) {
+      width: 50%;
+      height: 100%;
+    }
+    .optical {
+      width: 100%;
+      height: 50%;
+      @media screen and (min-width: 1220px) {
+        margin-left: 25px;
+        width: 100%;
+        height: 50%;
+        margin-bottom: 25px;
+      }
+      .galleryLinks {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        font-family: "Poppins";
+        color: white;
+        height: 47.5%;
+        text-align: center;
+        position: absolute;
+        // padding-bottom: 25%;
+        @media screen and (min-width: 1220px) {
+          height: 50%;
+          width: 95%;
+        }
+        img {
+          border-radius: 20px;
+          position: relative;
+          margin-bottom: 10%;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          object-fit: cover;
+          justify-content: center;
+          align-items: flex-end;
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          align-self: center;
+          bottom: 80px;
+          @media screen and (min-width: 768px) {
+            bottom: 110px;
+          }
+          h2 {
+            font-size: 2em;
+            padding-bottom: 75px;
+            @media screen and (min-width: 768px) {
+              font-size: 2em;
+              padding-bottom: 50px;
+            }
+            @media screen and (min-width: 1220px) {
+              font-size: 2em;
+            }
+          }
+          span {
+            @media screen and (min-width: 768px) {
+              font-size: 1.3em;
+            }
+            @media screen and (min-width: 1220px) {
+            }
+          }
+        }
+      }
+    }
+    .chris-evans-look-alike {
+      width: 100%;
+      height: 50%;
+      @media screen and (min-width: 1220px) {
+        margin-left: 25px;
+        width: 100%;
+        height: 50%;
+      }
+      .galleryLinks {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        font-family: "Poppins";
+        color: white;
+        height: 47.5%;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        // padding-bottom: 25%;
+        @media screen and (min-width: 1220px) {
+          height: 50%;
+          width: 95%;
+        }
+        img {
+          border-radius: 20px;
+          position: relative;
+          margin-bottom: 10%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          align-self: center;
+          bottom: 80px;
+          @media screen and (min-width: 768px) {
+            bottom: 110px;
+          }
+          h2 {
+            font-size: 2em;
+            padding-bottom: 75px;
+            @media screen and (min-width: 768px) {
+              font-size: 2em;
+              padding-bottom: 50px;
+            }
+            @media screen and (min-width: 1220px) {
+              font-size: 2em;
+            }
+          }
+          span {
+            @media screen and (min-width: 768px) {
+              font-size: 1.3em;
+            }
+            @media screen and (min-width: 1220px) {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.arrivals {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media screen and (min-width: 1220px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 100px auto;
+  }
+  h2 {
+    align-self: center;
+    font-family: "Poppins";
+    font-size: 2em;
+    @media screen and (min-width: 768px) {
+      font-size: 2em;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 100%;
+      text-align: center;
+      font-size: 1.5em;
+      margin: 120px auto;
+    }
+  }
+  h3 {
+    align-self: center;
+    font-family: "Poppins";
+    font-size: 2em;
+    color: black;
+    @media screen and (min-width: 768px) {
+      font-size: 1.5em;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 100%;
+      text-align: center;
+      font-size: 1.5em;
+      margin: 5% auto;
+    }
+  }
+  .whitey {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    width: 90%;
+    text-decoration: none;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      margin-top: 0%;
+    }
+    .t-shirt {
+      margin-bottom: 15px;
+      width: 100%;
+      @media screen and (min-width: 1220px) {
+        width: 80%;
+        align-self: center;
+        background-size: contain;
+        height: 430px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .wrist {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    width: 90%;
+    text-decoration: none;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      margin-top: 0%;
+    }
+    .watch {
+      margin-bottom: 15px;
+      width: 100%;
+      @media screen and (min-width: 1220px) {
+        width: 80%;
+        align-self: center;
+        background-size: contain;
+        height: 190px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .pink {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    width: 90%;
+    text-decoration: none;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      margin-top: 0%;
+    }
+    .sweater {
+      margin-bottom: 15px;
+      width: 100%;
+      @media screen and (min-width: 1220px) {
+        width: 80%;
+        align-self: center;
+        background-size: contain;
+        height: 430px;
+      }
+      img {
+        width: 100%;
+      }
+      .feat {
+        background-color: #5ccc86;
+        width: 34%;
+        color: white;
+        padding-top: 10px;
+        height: 35px;
+        margin: 15px;
+        border-radius: 5px;
+        position: absolute;
+        top: 0%;
+        display: flex;
+        justify-content: center;
+        font-family: "Poppins";
+        @media screen and (min-width: 768px) {
+          width: 35%;
+          font-size: 1.3em;
+          padding-top: 7px;
+        }
+        @media screen and (min-width: 1220px) {
+          width: 40%;
+          margin: 3%;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+  .glasses {
+    margin: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 90%;
+    text-decoration: none;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+      margin-bottom: 15%;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 25%;
+      margin: 0px;
+    }
+    .black-one {
+      margin-bottom: 15px;
+      width: 100%;
+      @media screen and (min-width: 1220px) {
+        width: 80%;
+        align-self: center;
+        background-size: contain;
+        height: 190px;
+      }
+    }
+  }
+  .sale {
+    color: white;
+    background-color: #fe6362;
+    width: 18%;
+    padding-top: 10px;
+    height: 35px;
+    margin: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins";
+    @media screen and (min-width: 768px) {
+      width: 20%;
+      font-size: 1.4em;
+      padding-top: 5px;
+    }
+    @media screen and (min-width: 1220px) {
+      width: 30%;
+      font-size: 1.1em;
+      margin: 10px;
+      padding-top: 10px;
+    }
+  }
+  .item-info {
+    text-align: center;
+    h2 {
+      color: black;
+      font-family: "Poppins";
+      padding-bottom: 15px;
+    }
+    span {
+      font-family: "Poppins";
+      color: #909097;
+      font-size: 1.3em;
+      s {
+        color: #c5c5c9;
+      }
+    }
+  }
+  .shop-all-items {
+    a {
+      align-self: center;
+      margin-top: 30px;
+      text-decoration: none;
+      color: black;
+      font-family: "Poppins";
+      @media screen and (min-width: 1220px) {
+        font-size: 1em;
+      }
+    }
+  }
+}
+.featured {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 250px auto;
+  position: relative;
+  @media screen and (min-width: 1220px) {
+    margin: 150px auto;
+    width: 80%;
+  }
+  h2 {
+    align-self: center;
+    font-family: "Poppins";
+    position: absolute;
+    background-color: #f5f5f7;
+    padding: 15px;
+    font-size: 1.4em;
+    bottom: 96%;
+    @media screen and (min-width: 768px) {
+      font-size: 1.5em;
+      bottom: 93%;
+      padding: 15px;
+    }
+    @media screen and (min-width: 1220px) {
+      font-size: 1.7em;
+      bottom: 95%;
+      padding: 0%;
+    }
+  }
+  .feat-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      height: 450px;
+    }
+    @media screen and (min-width: 1220px) {
+      height: 225px;
+      flex-wrap: nowrap;
+    }
+    .on {
+      width: 50%;
+      // height:180px;
+      // border:1px solid #838385;
+      @media screen and (min-width: 768px) {
+        width: 33.33%;
+        // height:50%;
+      }
+      @media screen and (min-width: 1220px) {
+        width: 16.666%;
+        // height:100%;
+        display: flex;
+        justify-content: center;
+      }
+      &:nth-child(1) {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        @media screen and (min-width: 1220px) {
+          border-right: none;
+        }
+        img {
+          width: 60%;
+          margin: 20%;
+          @media screen and (min-width: 768px) {
+            width: 65%;
+            margin: 17%;
+          }
+          @media screen and (min-width: 1220px) {
+            width: 15%;
+            position: absolute;
+            height: 120px;
+            // left:10%;
+            margin: 0%;
+            align-self: center;
+          }
+        }
+      }
+      &:nth-child(2) {
+        border-left: none;
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        @media screen and (min-width: 768px) {
+          border-left: none;
+          border-right: 1px solid black;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+        @media screen and (min-width: 1220px) {
+          border-right: none;
+        }
+        img {
+          width: 60%;
+          margin: 20%;
+          @media screen and (min-width: 768px) {
+            width: 65%;
+            margin: 17%;
+          }
+          @media screen and (min-width: 1220px) {
+            width: 15%;
+            position: absolute;
+            height: 120px;
+            // left:20%;
+            margin: 0%;
+            align-self: center;
+          }
+        }
+      }
+      &:nth-child(3) {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-top: none;
+        border-bottom: none;
+        @media screen and (min-width: 768px) {
+          border-left: none;
+          border-right: 1px solid black;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+        @media screen and (min-width: 1220px) {
+          border-right: none;
+        }
+        img {
+          width: 60%;
+          margin: 20%;
+          @media screen and (min-width: 768px) {
+            width: 65%;
+            margin: 17%;
+          }
+          @media screen and (min-width: 1220px) {
+            width: 15%;
+            position: absolute;
+            height: 120px;
+            // left:30%;
+            margin: 0%;
+            align-self: center;
+          }
+        }
+      }
+      &:nth-child(4) {
+        border-left: none;
+        border-right: 1px solid black;
+        border-top: none;
+        border-bottom: none;
+        @media screen and (min-width: 768px) {
+          border-left: 1px solid black;
+          border-right: 1px solid black;
+          border-top: none;
+          border-bottom: 1px solid black;
+        }
+        @media screen and (min-width: 1220px) {
+          border-left: none;
+          border-right: none;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+        img {
+          width: 60%;
+          margin: 20%;
+          @media screen and (min-width: 768px) {
+            width: 65%;
+            margin: 17%;
+          }
+          @media screen and (min-width: 1220px) {
+            width: 15%;
+            position: absolute;
+            height: 120px;
+            // left:40%;
+            margin: 0%;
+            align-self: center;
+          }
+        }
+      }
+      &:nth-child(5) {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        @media screen and (min-width: 768px) {
+          border-left: none;
+          border-right: 1px solid black;
+          border-top: none;
+          border-bottom: 1px solid black;
+        }
+        @media screen and (min-width: 1220px) {
+          // border-left:none ;
+          border-right: none;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+        img {
+          width: 60%;
+          margin: 20%;
+          @media screen and (min-width: 768px) {
+            width: 65%;
+            margin: 17%;
+          }
+          @media screen and (min-width: 1220px) {
+            width: 15%;
+            position: absolute;
+            height: 120px;
+            // left:50%;
+            margin: 0%;
+            align-self: center;
+          }
+        }
+      }
+      &:nth-child(6) {
+        border-left: none;
+        border-right: 1px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        @media screen and (min-width: 768px) {
+          border-left: none;
+          border-right: 1px solid black;
+          border-top: none;
+          border-bottom: 1px solid black;
+        }
+        @media screen and (min-width: 1220px) {
+          border-left: none;
+          border-right: 1px solid black;
+          border-top: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+        img {
+          width: 60%;
+          margin: 20%;
+          @media screen and (min-width: 768px) {
+            width: 65%;
+            margin: 17%;
+          }
+          @media screen and (min-width: 1220px) {
+            width: 12%;
+            position: absolute;
+            height: 120px;
+            // right:10%;
+            margin: 0%;
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}
+.best-banner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // height:289px;
+  background: url(../img/banner-small.jpg);
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: 53% 0%;
+  padding: 55% 0%;
+  @media screen and (min-width: 768px) {
+    background-size: contain;
+    background-size: 100%;
+    padding: 21% 0%;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding-bottom: 10%;
+    @media screen and (min-width: 768px) {
+      padding-bottom: 0%;
+    }
+    h2 {
+      font-family: "Indie Flower";
+      font-size: 3em;
+      padding-bottom: 5%;
+      @media screen and (min-width: 1220px) {
+        padding-bottom: 10%;
+      }
+    }
+    span {
+      font-family: "Poppins";
+      font-size: 1.5em;
+    }
+  }
+}
+.blog {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 30px auto;
+  @media screen and (min-width: 768px) {
+    margin: 150px auto;
+  }
+  @media screen and (min-width: 1220px) {
+    height: 700px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 150px auto;
+  }
+  h2 {
+    text-align: center;
+    font-family: "Poppins";
+    font-size: 2em;
+    margin-bottom: 100px;
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    background: url(../img/blog-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: 55% 0%;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 30px;
+    @media screen and (min-width: 1220px) {
+      height: 100%;
+      width: 49%;
+      margin-right: 1%;
+    }
+    .lifestyle {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      position: absolute;
+      width: 80%;
+      height: 262px;
+      align-self: center;
+      bottom: 0;
+      border-bottom: 1px solid #ccc;
+      @media screen and (min-width: 768px) {
+        font-size: 1.4em;
+      }
+      @media screen and (min-width: 1220px) {
+      }
+      h3 {
+        font-family: "Poppins";
+        color: #cccccc;
+        font-size: 1.5em;
+        top: 50px;
+        position: absolute;
+        margin-bottom: 0%;
+        align-self: center;
+        @media screen and (min-width: 768px) {
+          font-size: 1.2em;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1em;
+        }
+      }
+      span {
+        font-family: "Poppins";
+        font-size: 1.6em;
+        position: absolute;
+        bottom: 130px;
+        align-self: center;
+        @media screen and (min-width: 768px) {
+          font-size: 1em;
+          bottom: 120px;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1em;
+          // bottom:50%;
+        }
+      }
+      a {
+        text-decoration: none;
+        font-size: 1.5em;
+        font-family: "Poppins";
+        align-self: center;
+        color: black;
+        bottom: 70px;
+        position: absolute;
+        @media screen and (min-width: 768px) {
+          font-size: 1em;
+          bottom: 20%;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1em;
+          bottom: 25%;
+        }
+      }
+    }
+  }
+  .luxury-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      height: 250px;
+    }
+    @media screen and (min-width: 1220px) {
+      height: 47.5%;
+      margin-bottom: 2.5%;
+    }
+    .luxury-pic {
+      height: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        height: 100%;
+      }
+      @media screen and (min-width: 1220px) {
+      }
+    }
+    .luxury-info {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background-color: white;
+      height: 50%;
+      position: relative;
+      @media screen and (min-width: 768px) {
+        height: 100%;
+        width: 50%;
+      }
+      h3 {
+        font-family: "Poppins";
+        color: #cecece;
+        font-size: 1.5em;
+        top: 50px;
+        position: absolute;
+        align-self: center;
+        @media screen and (min-width: 768px) {
+          font-size: 1.3em;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1.5em;
+        }
+      }
+      span {
+        font-family: "Poppins";
+        font-size: 1.8em;
+        align-self: center;
+        position: absolute;
+        bottom: 120px;
+        @media screen and (min-width: 768px) {
+          font-size: 1.3em;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1.5em;
+        }
+      }
+      a {
+        font-family: "Poppins";
+        font-size: 1.5em;
+        text-decoration: none;
+        color: black;
+        // padding: 15% 0%;
+        bottom: 60px;
+        position: absolute;
+        align-self: center;
+        @media screen and (min-width: 768px) {
+          font-size: 1.2em;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+  .fashion-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+    @media screen and (min-width: 768px) {
+      flex-direction: row-reverse;
+      height: 250px;
+    }
+    @media screen and (min-width: 1220px) {
+      height: 50%;
+      margin-top: 2.5%;
+    }
+    .fashion-pic {
+      height: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        height: 100%;
+      }
+      @media screen and (min-width: 1220px) {
+      }
+    }
+    .fashion-info {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background-color: white;
+      height: 50%;
+      position: relative;
+      @media screen and (min-width: 768px) {
+        height: 100%;
+        width: 50%;
+      }
+      h3 {
+        font-family: "Poppins";
+        color: #cecece;
+        font-size: 1.5em;
+        top: 50px;
+        position: absolute;
+        align-self: center;
+        @media screen and (min-width: 768px) {
+          font-size: 1.3em;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1.5em;
+        }
+      }
+      span {
+        font-family: "Poppins";
+        font-size: 1.5em;
+        position: absolute;
+        bottom: 120px;
+        align-self: center;
+        @media screen and (min-width: 768px) {
+          font-size: 1.3em;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1.5em;
+        }
+      }
+      a {
+        font-family: "Poppins";
+        font-size: 1.4em;
+        text-decoration: none;
+        color: black;
+        align-self: center;
+        position: absolute;
+        bottom: 60px;
+        @media screen and (min-width: 768px) {
+          font-size: 1.2em;
+        }
+        @media screen and (min-width: 1220px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+  .lux-fash-wrapper {
+    @media screen and (min-width: 1220px) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 49%;
+      margin-left: 1%;
+    }
+  }
+}
+.insta-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+    height: 150px;
+  }
+  @media screen and (min-width: 1220px) {
+    height: 250px;
+  }
+  .insta {
+    flex: 1 1 33.33%;
+    width: 33.333%;
+    @media screen and (min-width: 768px) {
+      flex: 1 1 16.667%;
+    }
+    &.watch {
+      img {
+        position: absolute;
+        width: 33.333%;
+        height: 50%;
+        @media screen and (min-width: 768px) {
+          height: 100%;
+          width: 16.667%;
+        }
+      }
+    }
+    &.pods {
+      img {
+        position: absolute;
+        width: 33.333%;
+        height: 50%;
+        @media screen and (min-width: 768px) {
+          height: 100%;
+          width: 16.667%;
+        }
+      }
+    }
+    &.flower {
+      img {
+        position: absolute;
+        width: 33.333%;
+        height: 50%;
+        @media screen and (min-width: 768px) {
+          height: 100%;
+          width: 16.667%;
+        }
+      }
+    }
+    &.shoe {
+      img {
+        position: absolute;
+        width: 33.333%;
+        height: 50%;
+        @media screen and (min-width: 768px) {
+          height: 100%;
+          width: 16.667%;
+        }
+      }
+    }
+    &.astley {
+      img {
+        position: absolute;
+        width: 33.333%;
+        height: 50%;
+        @media screen and (min-width: 768px) {
+          height: 100%;
+          width: 16.667%;
+        }
+      }
+    }
+    &.peach {
+      img {
+        position: absolute;
+        width: 33.333%;
+        height: 50%;
+        @media screen and (min-width: 768px) {
+          height: 100%;
+          width: 16.667%;
+        }
+      }
+    }
+  }
+  .insta-tag {
+    background-color: white;
+    padding: 20px 75px;
+    align-self: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: "Poppins";
+    color: black;
+    position: absolute;
+    left: 100px;
+    display: flex;
+    @media screen and (min-width: 768px) {
+      padding: 20px 50px;
+      font-size: 1.3em;
+      left: 290px;
+    }
+    @media screen and (min-width: 1220px) {
+      padding: 2% 4%;
+      left: 40%;
+    }
+    .insta-logo {
+      background-image: url(../img/icon-instagram.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 13%;
+      height: 35px;
+      left: 27px;
+      align-self: center;
+      @media screen and (min-width: 768px) {
+        width: 15%;
+        left: 15px;
+        height: 27px;
+      }
+    }
+    .insta-link {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        margin-left: 13%;
+        span {
+          font-size: 0.8em;
+        }
+        span:first-child {
+          margin-right: 5px;
+        }
+      }
+      @media screen and (min-width: 1220px) {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+.sub-nav {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 50px 0% 0% 20px;
+  @media screen and (min-width: 768px) {
+    margin: 100px 0% 0% 50px;
+  }
+  @media screen and (min-width: 1220px) {
+    flex-direction: row;
+    margin: 100px 20px;
+    justify-content: space-around;
+  }
+  h2 {
+    font-family: "Poppins";
+    font-size: 2em;
+    @media screen and (min-width: 1220px) {
+      font-size: 2.3em;
+      margin-bottom: 35px;
+    }
+  }
+  ul {
+    @media screen and (min-width: 1220px) {
+      margin: 0% 0%;
+      font-size: 1.3em;
+    }
+    li {
+      margin: 20px 0px;
+      @media screen and (min-width: 1220px) {
+        margin: 0% 0%;
+      }
+      a {
+        text-decoration: none;
+        font-family: "Poppins";
+        color: black;
+        padding: 20px 20px 20px 0px;
+        font-size: 1.3em;
+
+        @media screen and (min-width: 1220px) {
+          padding: 20px 0px;
+          display: block;
+        }
+      }
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 25px;
+    line-height: 40px;
+    align-self: center;
+    @media screen and (min-width: 1220px) {
+      width: 40%;
+      margin: 0% 0%;
+      align-self: unset;
+    }
+    h2 {
+      font-size: 1.7em;
+    }
+    span {
+      color: #909097;
+      font-family: "Poppins";
+      font-size: 1.4em;
+      padding-bottom: 30px;
+      @media screen and (min-width: 1220px) {
+        font-size: 1.6em;
+      }
+    }
+    .email {
+      width: 100%;
+      border-bottom: 2px solid black;
+      display: flex;
+      justify-content: space-between;
+      @media screen and (min-width: 1220px) {
+        width: 118%;
+      }
+      input[type="text"] {
+        font-family: "Poppins";
+        color: #909097;
+        // text-align: center;
+        background-color: #f5f5f7;
+        border: none;
+        font-size: 1.1em;
+        width: 138%;
+        margin-right: 30%;
+        margin-left: 5%;
+        @media screen and (min-width: 1220px) {
+          font-size: 1.6em;
+          width: 108%;
+          margin-right: 23%;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        label {
+          font-family: "Poppins";
+          font-size: 1.1em;
+          align-self: center;
+          @media screen and (min-width: 1220px) {
+            font-size: 1.6em;
+          }
+        }
+        .arrow {
+          width: 23%;
+          align-self: center;
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+}
+footer {
+  width: 80%;
+  margin: 50px 20px;
+  font-family: "Poppins";
+  color: #909097;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  @media screen and (min-width: 768px) {
+    margin: 50px;
+  }
+}

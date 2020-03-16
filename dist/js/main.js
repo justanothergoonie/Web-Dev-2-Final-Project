@@ -1,0 +1,2 @@
+"use strict";var hamburgerButton=document.querySelector(".toggle"),navList=document.querySelector(".hide-small"),toggleNav=function(){navList.classList.toggle("showing")};hamburgerButton.addEventListener("click",toggleNav);
+//# sourceMappingURL=main.js.map
